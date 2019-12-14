@@ -47,7 +47,7 @@ export class TarefaService {
     let tarefas: Tarefa[] = this.listarTodos();
     const tarefa = tarefas.find(x => x.id === id);
     tarefa.concluida = !tarefa.concluida;
-    tarefas = tarefas.filter(x => x.id === id);
+    tarefas = tarefas.filter(x => x.id !== id);
     tarefas.push(tarefa);
     this.salvar(tarefas);
   }
